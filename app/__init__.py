@@ -9,4 +9,8 @@ def create_app(test_config=None):
         SECRET_KEY='byrd_is_the_word'
     )
 
+    @app.route('/hello')
+    def hello():
+        return 'hello world this is my first python app'
+
     return app
