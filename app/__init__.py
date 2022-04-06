@@ -1,3 +1,4 @@
+from app.routes import home
 # we import the Flask function and use the 'def' keyword to define what create_app() does
 from flask import Flask 
 # when Flask runs the app package it will be looking for create_app() function
@@ -12,5 +13,8 @@ def create_app(test_config=None):
     @app.route('/hello')
     def hello():
         return 'hello world this is my first python app'
+
+    # registering the routes!
+    app.register_blueprint(home)
 
     return app
