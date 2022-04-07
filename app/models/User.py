@@ -8,3 +8,16 @@ class User(Base):
     username = Column(String(50), nullable=False)
     email = Column(String(50), nullable=False, unique=True)
     password = Column(String(100), nullable=False)
+
+    @validates('email')
+    def validate_email(self, key, email):
+        #making sure email contains @ character
+        assert '@' in email
+
+        return email
+
+    @validates('password')
+    def validate_password(self, key, password):
+        assert len(password) > 4
+
+        return password
