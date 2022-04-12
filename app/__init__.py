@@ -1,7 +1,10 @@
+from app.db import init_db
 from app.routes import home, dashboard
 # we import the Flask function and use the 'def' keyword to define what create_app() does
 from flask import Flask 
 # when Flask runs the app package it will be looking for create_app() function
+
+
 def create_app(test_config=None):
     #set up app config
     app = Flask(__name__, static_url_path='/')
@@ -9,6 +12,7 @@ def create_app(test_config=None):
     app.config.from_mapping(
         SECRET_KEY='byrd_is_the_word'
     )
+    
 
     @app.route('/hello')
     def hello():
@@ -17,5 +21,6 @@ def create_app(test_config=None):
     # registering the routes!
     app.register_blueprint(home)
     app.register_blueprint(dashboard)
-
+ 
+    init_db()
     return app
