@@ -35,6 +35,7 @@ db.commit()
 db.add_all([
     Comment(comment_text='This is a Udemy course reccomended to me by Juan', user_id=1, post_id=1),
     Comment(comment_text='A website reccomended by Morgan', user_id=1, post_id=2),
+    Comment(comment_text='I wonder if this is a free course', user_id=3, post_id=1),
     Comment(comment_text='Great for Start ups!', user_id=1, post_id=3),
     Comment(comment_text='this was a highly reccomended site from Leah', user_id=2, post_id=4),
     Comment(comment_text='this is a very common algo site', user_id=3, post_id=5)
@@ -43,7 +44,7 @@ db.add_all([
 db.commit()
 
 db.add_all([
-    Vote(user_id=1, post_id=2),
+    Vote(user_id=1, post_id=1),
     Vote(user_id=1, post_id=4),
     Vote(user_id=2, post_id=4),
     Vote(user_id=3, post_id=4),
