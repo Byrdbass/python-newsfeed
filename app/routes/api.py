@@ -107,7 +107,7 @@ def upvote():
 
 @bp.route('/posts', methods=['POST'])
 def create():
-    data = request.get_json
+    data = request.get_json()
     db = get_db()
 
     try:
