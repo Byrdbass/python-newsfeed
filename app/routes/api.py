@@ -1,7 +1,7 @@
 import json
 from flask import Blueprint, request, jsonify, session
 import sqlalchemy
-from app.models import User
+from app.models import User, Post, Comment, Vote
 from app.db import get_db
 import sys
 
